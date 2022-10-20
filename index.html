@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+
+    <title>Caça Palavras</title>
+</head>
+<body>
+    <script>
+        matriz = new Array;
+        matriz = [            
+            ["A","V","E","N","T","A","D","O","R","","","S","","",""],
+            ["","","","","","","","","","","","U","","",""],
+            ["B","","","","","","","","","","","P","","H",""],
+            ["E","","C","","","","","","","","","E","","U",""],
+            ["R","","A","","","G","","","","","","R","","R",""],
+            ["L","","Y","","","O","","","","","","F","","A",""],
+            ["I","","M","","","L","","","","","","A","","C",""],
+            ["N","","A","","","","","","","","","S","","A",""],
+            ["E","","N","","","","","","","","","T","","N",""],
+            ["T","","","","","","","","","","","","","",""],
+            ["A","","V","E","Y","R","O","N","","","","","","",""],
+            ["","","","","","","","","","","","","","",""],
+            ["F","U","S","C","A","","","","","","","P","O","L","O"],
+            ["","","","","","","","","","","","","","",""],
+            ["","","","","C","O","R","S","A","","","","","",""],
+        ];
+
+    window.onload = function(){
+        for(let node of document.querySelectorAll("td")){
+            if(node.textContent != ""){
+                node.className = "letra";
+            }
+            else{
+                let charcode = Math.round(65 + Math.random() * 25)
+                node.textContent = String.fromCharCode(charcode)
+            }
+        }
+    }
+    document.write("<h1>Caça palavras com modelos de carros</h1> <table border='5' align='center'>");
+    
+    for(linha=0;linha<15;linha++){
+        document.write("<tr>")
+            for(coluna=0;coluna<15;coluna++){
+                document.write("<td>" + matriz[linha][coluna] + "</td>");
+            }
+        document.write("</tr>");
+    }
+    document.write("</table>")
+
+    </script> 
+</body>
+</html>
